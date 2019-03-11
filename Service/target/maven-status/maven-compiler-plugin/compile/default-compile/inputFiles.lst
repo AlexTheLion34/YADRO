@@ -1,0 +1,12 @@
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/exception/RestExceptionHandler.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/exception/VersionDoesNotMatchException.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/service/NetworkInterfaceService.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/parser/helpers/enums/Commands.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/parser/NetworkInterfaceParser.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/exception/ApiError.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/parser/helpers/enums/InfoParameters.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/parser/helpers/ConsoleReader.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/controller/Controller.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/Application.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/model/NetworkInterface.java
+/home/alex/Рабочий стол/Java/YADRO/Service/src/main/java/com/service/exception/InterfaceNotFoundException.java

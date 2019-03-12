@@ -10,6 +10,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
@@ -37,14 +38,8 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponseEntity(apiError);
     }
 
-    @ExceptionHandler(IOException.class)
+    @ExceptionHandler(ParseException.class)
     public ResponseEntity<Object> handleIOException(IOException ex) {
-        ApiError apiError = new ApiError(INTERNAL_SERVER_ERROR, ex);
-        return buildResponseEntity(apiError);
-    }
-
-    @ExceptionHandler(InterruptedException.class)
-    public ResponseEntity<Object> handleInterruptedException(InterruptedException ex) {
         ApiError apiError = new ApiError(INTERNAL_SERVER_ERROR, ex);
         return buildResponseEntity(apiError);
     }

@@ -4,11 +4,10 @@ import com.service.model.NetworkInterface;
 import com.service.parser.helpers.enums.Commands;
 import com.service.parser.helpers.ConsoleReader;
 import com.service.parser.helpers.enums.InfoParameters;
+import org.apache.el.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +22,11 @@ public class NetworkInterfaceParser {
     /**
      * Parsing names of all available NetworkInterfaces
      * @return list with names of all available NetworkInterfaces
-     * @throws IOException from console reader
-     * @throws InterruptedException from console reader
+     * @throws ParseException if nothing was read from console
      */
-    public List<String> parseNames() throws IOException, InterruptedException {
+    public List<String> parseNames() throws ParseException {
         List<String> interfaceNames = new ArrayList<>();
-        info = consoleReader.getInfo(Commands.RETURN_NAMES.getName());
+        info = consoleReader.getInfo(Commands.RETURN_NAMES.getName()).orElseThrow(ParseException::new);
         info.remove(0);
         for (String line : info) {
             interfaceNames.add(line.split(" ")[0]);
@@ -40,13 +38,12 @@ public class NetworkInterfaceParser {
      * Parsing NetworkInterface and its parameters
      * @param name name of NetworkInterface
      * @return NetworkInterface object
-     * @throws IOException from console reader
-     * @throws InterruptedException from console reader
+     * @throws ParseException if nothing was read from console
      */
-    public NetworkInterface parseByName(String name) throws IOException, InterruptedException {
+    public NetworkInterface parseByName(String name) throws ParseException {
         NetworkInterface networkInterface = new NetworkInterface();
         String[] networkAddresses = new String[2];
-        info = consoleReader.getInfo(Commands.RETURN_INFO.getName() + name);
+        info = consoleReader.getInfo(Commands.RETURN_INFO.getName() + name).orElseThrow(ParseException::new);
         for (String line : info) {
            String[] lineToArray = line.split(" ");
             if (line.contains(InfoParameters.MAC.getName())) {

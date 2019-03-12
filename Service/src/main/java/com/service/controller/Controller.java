@@ -4,12 +4,12 @@ import com.service.service.NetworkInterfaceService;
 import com.service.exception.InterfaceNotFoundException;
 import com.service.exception.VersionDoesNotMatchException;
 import com.service.model.NetworkInterface;
+import org.apache.el.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -27,8 +27,7 @@ public class Controller {
 
     @GetMapping(value = "/{api_version}/interfaces")
     public ResponseEntity<Map<String, List<String>>> getAllInterfaces(@PathVariable("api_version") String version)
-                                                                        throws IOException, InterruptedException,
-                                                                                    VersionDoesNotMatchException {
+                                                                  throws VersionDoesNotMatchException, ParseException {
 
         if (!version.equals(service.getCurrentApiVersion().get("version")))
             throw new VersionDoesNotMatchException("Version " + version + " is not current");
@@ -39,8 +38,8 @@ public class Controller {
     @GetMapping(value = "/{api_version}/interfaces/{name}")
     public ResponseEntity<NetworkInterface> getInterface(@PathVariable("api_version") String version,
                                                          @PathVariable(value = "name") String name)
-                                                            throws InterruptedException, InterfaceNotFoundException,
-                                                                            VersionDoesNotMatchException, IOException {
+                                                        throws InterfaceNotFoundException, VersionDoesNotMatchException,
+                                                                                                        ParseException {
 
         if (!version.equals(service.getCurrentApiVersion().get("version")))
             throw new VersionDoesNotMatchException("Version " + version + " is not current");

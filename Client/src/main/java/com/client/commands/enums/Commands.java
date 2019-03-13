@@ -1,4 +1,4 @@
-package commands.enums;
+package com.client.commands.enums;
 
 public enum Commands {
 

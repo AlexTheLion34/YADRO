@@ -1,4 +1,4 @@
-package commands.interfaces;
+package com.client.commands.interfaces;
 
 @FunctionalInterface
 public interface Commandable {

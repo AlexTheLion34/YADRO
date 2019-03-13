@@ -1,4 +1,4 @@
-package options;
+package com.client.options;
 
 import com.beust.jcommander.Parameter;
 
@@ -18,7 +18,7 @@ public class GlobalOptions {
 
         switch (commandName) {
             case "help":
-                System.out.println("DESCRIPTION:\n\t help - shows list of commands and information");
+                System.out.println("DESCRIPTION:\n\t help - shows list of com.client.commands and information");
                 break;
             case "list":
                 System.out.println("DESCRIPTION:\n\t list - shows shows list of networking interfaces\n" +

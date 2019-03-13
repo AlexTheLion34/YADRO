@@ -1,4 +1,4 @@
-package commands.interfaces;
+package com.client.commands.interfaces;
 
 import java.io.BufferedReader;
 import java.io.IOException;

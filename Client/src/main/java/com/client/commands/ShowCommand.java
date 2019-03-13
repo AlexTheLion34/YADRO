@@ -1,11 +1,11 @@
-package commands;
+package com.client.commands;
 
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
-import commands.enums.Errors;
-import commands.interfaces.Commandable;
-import commands.interfaces.JSONParser;
-import commands.interfaces.Networker;
+import com.client.commands.enums.Errors;
+import com.client.commands.interfaces.Commandable;
+import com.client.commands.interfaces.JSONParser;
+import com.client.commands.interfaces.Networker;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import java.io.IOException;

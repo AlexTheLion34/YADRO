@@ -1,17 +1,17 @@
-package commands;
+package com.client.commands;
 
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
-import commands.enums.Errors;
-import commands.interfaces.Commandable;
-import commands.interfaces.Networker;
+import com.client.commands.enums.Errors;
+import com.client.commands.interfaces.Commandable;
+import com.client.commands.interfaces.Networker;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import java.net.URL;
 
 @Parameters(commandNames = {"list"})
-public class ListCommand implements Commandable, Networker, commands.interfaces.JSONParser {
+public class ListCommand implements Commandable, Networker, com.client.commands.interfaces.JSONParser {
 
     @Parameter(names = {"--server"})
     private String ip;

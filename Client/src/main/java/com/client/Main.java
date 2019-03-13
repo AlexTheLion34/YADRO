@@ -1,11 +1,13 @@
+package com.client;
+
 import com.beust.jcommander.JCommander;
-import commands.ShowCommand;
-import commands.enums.Commands;
-import commands.enums.Errors;
-import commands.interfaces.Commandable;
-import commands.HelpCommand;
-import commands.ListCommand;
-import options.GlobalOptions;
+import com.client.commands.ShowCommand;
+import com.client.commands.enums.Commands;
+import com.client.commands.enums.Errors;
+import com.client.commands.interfaces.Commandable;
+import com.client.commands.HelpCommand;
+import com.client.commands.ListCommand;
+import com.client.options.GlobalOptions;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -33,9 +33,8 @@ public class Main {
         jc.addCommand(listCommand);
         jc.addCommand(showCommand);
 
-        jc.parse(args);
-
         try {
+            jc.parse(args);
             if (globalOptions.version) {
                 globalOptions.showVersion();
             } else if (globalOptions.commandName != null) {
@@ -43,8 +42,13 @@ public class Main {
             } else {
                 commands.get(jc.getParsedCommand()).performCommand();
             }
-        } catch (NullPointerException e){
-            System.out.println(Errors.NO_ARGUMENT_ERROR.getMessage());
+        } catch (Exception e){
+            if (e.getClass() == NullPointerException.class) {
+                System.out.println(Errors.NO_ARGUMENT_ERROR.getMessage());
+            } else {
+                System.out.println(Errors.INVALID_ARGUMENT_ERROR.getMessage());
+            }
+
         }
     }
 }

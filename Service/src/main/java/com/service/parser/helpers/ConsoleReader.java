@@ -28,7 +28,7 @@ public class ConsoleReader {
             process.waitFor();
             process.destroy();
         } catch (Exception e) {
-            stringList = Optional.empty();
+            return Optional.empty();
         }
         return stringList;
     }

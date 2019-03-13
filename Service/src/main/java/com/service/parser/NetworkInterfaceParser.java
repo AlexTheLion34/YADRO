@@ -60,9 +60,9 @@ public class NetworkInterfaceParser {
                 int ipv6Index = line.indexOf(InfoParameters.IPV6.getName());
                 networkAddresses[1] = lineToArray[ipv6Index + 2];
             }
-            networkInterface.setName(name);
-            networkInterface.setInetAddress(networkAddresses);
         }
+        networkInterface.setName(name);
+        networkInterface.setInetAddress(networkAddresses);
         return networkInterface;
     }
 }

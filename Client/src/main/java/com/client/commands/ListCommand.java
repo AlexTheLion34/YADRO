@@ -24,20 +24,20 @@ public class ListCommand implements Commandable, Networker, com.client.commands.
         try {
             URL url = new URL("http://" + ip + ":" + port + "/service/v1/interfaces");
             String response = String.valueOf(performRequest(url));
-            parse(response);
+            System.out.println(parse(response));
         } catch (Exception e) {
             System.out.println(Errors.SERVER_ERROR.getMessage());
         }
     }
 
     @Override
-    public void parse(String string) {
+    public String parse(String string) {
         try {
             JSONObject jsonObject = (JSONObject) new JSONParser().parse(string);
             JSONArray networkInterfaces = (JSONArray) jsonObject.get("interfaces");
-            System.out.println(String.join(" ", networkInterfaces));
+            return (String.join(" ", networkInterfaces));
         } catch (Exception e) {
-            System.out.println(Errors.SERVER_ERROR.getMessage());
+            return (Errors.SERVER_ERROR.getMessage());
         }
     }
 }

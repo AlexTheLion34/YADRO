@@ -29,7 +29,7 @@ public class ShowCommand implements Commandable, Networker, JSONParser {
         try {
             URL url = new URL("http://" + ip + ":" + port + "/service/v1/interfaces/" + interfaceName);
             String response = String.valueOf(performRequest(url));
-            parse(response);
+            System.out.println(parse(response));
         } catch (IOException e) {
             if (e.getClass() == java.io.FileNotFoundException.class) {
                 System.out.println(Errors.NAME_ERROR.getMessage());
@@ -40,26 +40,30 @@ public class ShowCommand implements Commandable, Networker, JSONParser {
     }
 
     @Override
-    public void parse(String string) {
-        JSONObject jsonObject = new JSONObject();
+    public String parse(String string) {
+        JSONObject jsonObject;
         try {
             jsonObject = (JSONObject) new org.json.simple.parser.JSONParser().parse(string);
         } catch (ParseException e) {
-            System.out.println(Errors.SERVER_ERROR.getMessage());
+            return Errors.SERVER_ERROR.getMessage();
         }
         if (jsonObject.get("name") != null) {
-            format(jsonObject);
+            return format(jsonObject);
         }
+        return "";
     }
 
-    private void format(JSONObject jsonObject) {
+    private String format(JSONObject jsonObject) {
         String name = (String) jsonObject.get("name");
         String space = new String(new char[name.length() + 3]).replace('\0', ' ');
         List inetAddresses = (List) jsonObject.get("inetAddress");
-        System.out.print(jsonObject.get("name") + ":  ");
-        System.out.println("Hw_addr: " + jsonObject.get("hwAddress") + "\n");
-        System.out.println(space + "Ipv4: " + inetAddresses.remove(0) + "\n");
-        System.out.println(space + "Ipv6: " + inetAddresses.remove(0) + "\n");
-        System.out.println(space + "MTU: "  + jsonObject.get("mtu") + "\n");
+        StringBuilder result = new StringBuilder();
+
+        result.append(jsonObject.get("name")).append(":  ");
+        result.append("Hw_addr: ").append(jsonObject.get("hwAddress")).append("\n");
+        result.append(space).append("Ipv4: ").append(inetAddresses.remove(0)).append("\n");
+        result.append(space).append("Ipv6: ").append(inetAddresses.remove(0)).append("\n");
+        result.append(space).append("MTU: ").append(jsonObject.get("mtu")).append("\n");
+        return result.toString();
     }
 }

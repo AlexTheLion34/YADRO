@@ -7,8 +7,8 @@ services:
 
 before_install:
   - cd client
-  - docker build
+  - docker build -t
   - cd ..
   - cd service
-  - docker build
+  - docker build -t
   - docker images

@@ -5,10 +5,10 @@ jdk:
 services:
   - docker
 
-before_install:
+after_success:
   - cd client
-  - docker build -t yadroclient
+  - docker build -t yadroclient .
   - cd ..
   - cd service
-  - docker build -t yadroservice
+  - docker build -t yadroservice .
   - docker images

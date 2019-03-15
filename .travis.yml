@@ -8,11 +8,12 @@ services:
 after_success:
   - cd client
   - docker build -t yadroclient .
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push $DOCKER_USERNAME/yadroclient:latest
   - cd ..
   - cd service
   - docker build -t yadroservice .
-  - docker images
-  - cd ..
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push $DOCKER_USERNAME/yadroclient:latest
   - docker push $DOCKER_USERNAME/yadroservice:latest
+  - docker images
+

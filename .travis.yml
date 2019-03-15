@@ -12,9 +12,10 @@ after_success:
   - cd service
   - docker build -t yadroservice .
   - docker images
+  - cd ..
 
 deploy:
   provider: script
-  script: bash docker_push.sh
+  script: bash docker_push
   on:
     branch: master

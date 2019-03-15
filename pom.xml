@@ -16,8 +16,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>Service</module>
-        <module>Client</module>
+        <module>service</module>
+        <module>client</module>
     </modules>
 
 </project>

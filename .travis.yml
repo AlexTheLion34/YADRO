@@ -12,6 +12,7 @@ after_success:
   - cd service
   - docker build -t yadroservice .
   - docker images
+  - cd ..
 
 deploy:
   provider: script

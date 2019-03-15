@@ -1,3 +1,13 @@
 language: java
 jdk:
   - oraclejdk8
+
+services:
+  - docker
+
+before_install:
+  - cd client
+  - docker build -t yadroclient/client
+  - cd ..
+  - cd service
+  - docker build -t yadroservice/service

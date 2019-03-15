@@ -7,7 +7,8 @@ services:
 
 before_install:
   - cd client
-  - docker build yadroclient/client
+  - docker build
   - cd ..
   - cd service
-  - docker build yadroservice/service
+  - docker build
+  - docker images

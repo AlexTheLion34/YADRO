@@ -1,14 +1,16 @@
 language: java
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 services:
-  - docker
-
+- docker
 after_success:
-  - cd client
-  - docker build -t yadroclient .
-  - cd ..
-  - cd service
-  - docker build -t yadroservice .
-  - docker images
+- cd client
+- docker build -t yadroclient .
+- cd ..
+- cd service
+- docker build -t yadroservice .
+- docker images
+env:
+  matrix:
+  - secure: KeKSbRTgsxC5F9KGC6tIPPrdNBvhqhd3TgZV0EVoRdbQDvWpzjv3eL6F6iEUkes4nwmEGqMhUmYsfe6mM5Oz8HOuby3xjxNXLXqHHK4uCLfR5RxmEmhpYFl2CqCbwxIXTyi+3LpdzDM4SlgIDUJ3kKDPw/SGJRARe/VO1KsOa+Mct+XpH+PPxbOsMhAEmiP4aiNUHnzG0R+4aQH8JZmFcwfnafn3PgUY7T/5pLIQgPByUvyoKXT/6TW83qg5ENwfGhoT8punClDImfDzuhjM1rDKSBMgUj4EXj2JEB2EtOyYJYQ7P4TcSOqRGg+gQ/vRk9bHv72aDPUQcxGREMN+YYVbyOm4UgqyIyQRnoDbhsJHUVpDcfi69U0hiTG2txPp1L5oD8mYhiSZIu9zX4Xc8KhqifD54BGzYDfI2cjx3apG8iuMMZFQGPJNM1cOmSJsHqUxLJuuT/ZAmLblUObER20GOISAlzorM1tvigWbhYYTqY+LffSHwwUS1RlfdPuJpCL0DY5Qk8K9EwXvt5WqNvZEeTpgmEN/7GziBo2dCsiG93183D+q9IrALDJNdn3zYJ1c4Osfhiru4im3x2D9h86aqvNmVlB695SqnmpP2Pr5OdsxeY61KLsuM1dYuwjE4SPyqeEheSPKj928ygyev4YMANLmDmyZsCOcQhBFOPs=
+  - secure: lno/oPLeVGajZbn+Zi8s10odyyWxo16n9uMXN0CT8OYSToiQkcvQg9PJdoHS9n0/WN5+taAoHNkktgGltDSH9M2yqkGPy5V+WHwl1qnWVY+m3RKWMJCAlGLuN1QcPpL9xHVTRhbcKRFy+yOU9GnTfb9xlozCaWfI0m8vp4cHIOWjyByxICpSzozVFiRc81uLCJxQkDkb0J4PN9FlGTxqdakoeJBBlBZRR3TBVEQ4DWUpiJMzvBD7vOE5Te+fiikqeUuURwATIH3jUVUzXNoh3l75ldnQ4ZLWDPAkwC/13oC1YCfxJl05acgvM0+OaoVqxK7cI7RhfJSGKVIbxHRQ+A5l5h3WjdcvPDVzUZ+hdqnNAXBM39vXNp2PJe6W1PtFHsJLlqKKhihnxnU4vjjoLR1nVg4jxxDbIzQ1gqZiOBuWXw4YzN/CBivhnRHMpeXPbj5vVGc0b+cl1Hc0K66OhRZUYkInOEX4Gd4tXmic1YwWuXTmzt3mYDBSb8vMWJAfsSna37CXDFGsgh3iW1IgO9fTYzfWl4aiop9JIWlF/HRFtqh2BHcgrRs2NOE7ZF0ryjJkTLxoUZsCzXshU8j+ZC7QioZNDMuZ6838Vwhz9nAVYLa8kEAsnbm3lRD9kTjOdYfUgeMBUz8gkESuMUf9dIgg8oYvMtDSyjOR5q10kqk=

@@ -7,10 +7,10 @@ services:
 
 after_success:
   - cd client
-  - docker build -t yadro_client .
+  - docker build -t yadroclient .
   - cd ..
   - cd service
-  - docker build -t yadro_service .
+  - docker build -t yadroservice .
   - docker images
 
 deploy:

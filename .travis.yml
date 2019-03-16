@@ -8,14 +8,14 @@ services:
 after_success:
   - cd client
   - docker build -t yadroclient .
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker tag yadroclient $DOCKER_USERNAME/yadro_client:latest
+  - docker push $DOCKER_USERNAME/yadro_client:latest
   - cd ..
   - cd service
   - docker build -t yadroservice .
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker tag yadroservice $DOCKER_USERNAME/yadro_service:latest
+  - docker push $DOCKER_USERNAME/yadro_service:latest
   - docker images
-  - cd ..
 
-deploy:
-  provider: script
-  script: bash docker_push
-  on:
-    branch: master

@@ -7,21 +7,22 @@
 * Now you are ready to go!
 ### Installing service ###
 * Open terminal
-* Run - docker pull yadroservice/service:latest
-* Check if the image was downloaded - docker ps
+* Run: 'docker pull alexthelion34/yadro_service'
+* Check if the image was downloaded: 'docker images'
 ### Running service ###
 + In terminal run commands:
-    * docker run -p 8080:8080 --network="host" yadroservice/service - to see network interfaces from local machine
-    * docker run -p 8080:8080 yadroservice/service - to see network interfaces from docker container
+    * Work with local machine interfaces: 'docker run -p 8080:8080 --network="host" alexthelion34/yadro_service'
+    * Work with container interfaces: 'docker run -p 8080:8080 alexthelion34/yadro_service'
 ### Installing client ###
 * Open terminal
-* Run - docker pull yadroclient/client:latest
-* Check if the image was downloaded - docker ps
+* Run: 'docker pull alexthelion34/yadro_client'
+* Check if the image was downloaded: 'docker images'
 ### Before running ###
-* In terminal run - alias cli_net='docker run yadroclient/client'
-* Check if alias was added - run alias
+* Run - 'alias cli_net='docker run alexthelion34/yadro_client''
+* Check if alias was added: 'alias'
 ### Running client ###
 + In terminal run commands:
     * cli_net help
     * cli_net --version
     * and etc.
+### Output for some cli_net commands ###

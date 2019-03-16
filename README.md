@@ -27,5 +27,18 @@
     * and etc.
 ### Output for some cli_net commands ###
 * `cli_net help` <br/>
+
+![cli_net_help_output](https://user-images.githubusercontent.com/37543158/54476346-2ab83200-480d-11e9-9747-2942de182064.png)
 * `cli_net list --server 172.17.0.1 --port 8080` <br/>
+
+![cli_net_list_out](https://user-images.githubusercontent.com/37543158/54476347-360b5d80-480d-11e9-92f8-e89ee10b3679.png)
 * `cli_net show --name wlxe8cc18bc1213 --server 172.17.0.1 --port 8080` <br/>
+
+![cli_net_show_out](https://user-images.githubusercontent.com/37543158/54476351-4cb1b480-480d-11e9-8674-03c04277a50b.png)
+
+### Note ###
+* 172.17.0.1 - is the address of docker0 
+* You can find it with command: `ifconfig docker0`
+
+
+

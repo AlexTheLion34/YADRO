@@ -26,3 +26,6 @@
     * `cli_net --version`
     * and etc.
 ### Output for some cli_net commands ###
+* `cli_net help` <br/>
+* `cli_net list --server 172.17.0.1 --port 8080` <br/>
+* `cli_net show --name wlxe8cc18bc1213 --server 172.17.0.1 --port 8080` <br/>

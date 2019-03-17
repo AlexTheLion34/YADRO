@@ -1,4 +1,4 @@
-# README #
+# Test task #
 * Author name : Aleksey Petrenko
 * Travis CI: [![Build Status](https://travis-ci.org/AlexTheLion34/YADRO.svg?branch=master)](https://travis-ci.org/AlexTheLion34/YADRO)
 ### How to start? ###
@@ -14,14 +14,17 @@
     * Work with local machine interfaces: `docker run -p 8080:8080 --network="host" alexthelion34/yadro_service`
     * Work with container interfaces: `docker run -p 8080:8080 alexthelion34/yadro_service`
 ### Installing client ###
-* Open terminal
+* Open ***another*** terminal:
 * Run: `docker pull alexthelion34/yadro_client`
 * Check if the image was downloaded: `docker images`
 ### Before running ###
 * Run: `alias cli_net='docker run alexthelion34/yadro_client'`
 * Check if alias was added: `alias`
++ Note:
+   * This alias is temorary, so it works only during session in ***this terminal*** (it is enough for testing)
+   * If you want to make a permanent one, look through this [guide](https://linuxrussia.com/terminal-alias.html)
 ### Running client ###
-+ In terminal run commands:
++ In ***opened terminal*** run commands:
     * `cli_net help`
     * `cli_net --version`
     * and etc.
